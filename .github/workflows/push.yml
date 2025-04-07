@@ -20,15 +20,11 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Print Docker image tag
-        run: echo "🔖 Imagen: daperex17/pruebas_action:${{ github.sha }}"
-
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
-          tags: "daperex17/pruebas_action:${{ github.sha }}"
 
       - name: Run Docker container
         run: |
@@ -38,4 +34,4 @@ jobs:
           echo "🚀 Ejecutando nuevo contenedor"
           docker run -d --name app \
             -p 80:80 \
-            daperex17/pruebas_action:${{ github.sha }}
+            daperex17/pruebas_action:latest
