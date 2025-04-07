@@ -39,4 +39,3 @@ jobs:
           docker run -d --name app \
             -p 80:80 \
             daperex17/pruebas_action:${{ github.sha }}
-
