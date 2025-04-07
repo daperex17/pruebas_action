@@ -5,7 +5,7 @@ on:
 
 jobs:
   test:
-    runs-on: [self-hosted, deploy_app]
+    runs-on: self-hosted
     steps:
       - name: Say hello
-        run: echo "👋 Hola desde el runner deploy_app"
+        run: echo "👋 Hola desde cualquier runner self-hosted"
