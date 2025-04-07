@@ -26,5 +26,5 @@ jobs:
 
           echo "🚀 Ejecutando contenedor desde imagen local"
           docker run -d --name app \
-            -p 80:80 \
+            -p 80:8080 \
             local_app:latest
